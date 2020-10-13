@@ -21,7 +21,7 @@ app.set('view engine', 'pug');
 //mongoose ulash jarayoni
 mongoose.connect('mongodb://localhost:27017/NewMusic',
  {useNewUrlParser: true, useUnifiedTopology: true});
-
+//mongooose
  const db=mongoose.connection;
  db.on("error",console.error.bind(console,"connection error:"));
  db.once("open",function(){console.log("Mongo Dbga local ulandik");});
