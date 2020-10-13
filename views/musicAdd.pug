@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h1.mb-5= title
+  form(method="POST", action="/music/add")
+    .form-group
+      label(for='name') Musiqa qo'shish
+      input#name.form-control(type='text', name="name")
+    .form-group
+      label(for='singer') Qo'shiqchi
+      input#singer.form-control(type='text', name="singer")
+    .form-group
+      label(for='comment') Izoh
+      input#comment.form-control(type='text', name="comment")
+    button.btn.btn-success(type='submit') Jo'natish

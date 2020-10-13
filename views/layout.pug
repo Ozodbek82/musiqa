@@ -1,0 +1,25 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css' 
+    integrity='sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z' crossorigin='anonymous')
+    link(rel='stylesheet' href='/stylesheets/style.css')
+
+  body
+
+  nav.mb-5.navbar.navbar-expand-lg.navbar-light.bg-success
+    a.navbar-brand(href='/') Music
+    button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+      span.navbar-toggler-icon
+    #navbarSupportedContent.collapse.navbar-collapse
+      ul.navbar-nav.mr-auto
+        li.nav-item
+          a.nav-link(href='/') Bosh sahifa
+        li.nav-item
+          a.nav-link(href='/music/add') Musiqa qo'shish
+  .container
+    block content
+    footer 
+      hr
+      p Xizmatlar litsenziyalangan &copy; 2020
