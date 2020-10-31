@@ -1,8 +1,18 @@
-extends layout
-
-block content
-    h1.mb-3= title
-    ul.list-group
-      li.list-group-item nomi #{musics.name}
-      li.list-group-item qo'shiqchi #{musics.singer}
-      li.list-group-item comment #{musics.comment}
+include header
+-var bg="bg-success"
+-var page="musicEdit"
+body
+  include navbar
+  h1.mb-5= title
+  form(method="POST", action="/music/edit/"+musics._id)
+    .form-group
+      label(for='name') Musiqa nomini o`zgartirish
+      input#name.form-control(type='text', name="name",value=musics.name)
+    .form-group
+      label(for='singer') Qo'shiqchini o`zgartirish
+      input#singer.form-control(type='text', name="singer" value=musics.singer)
+    .form-group
+      label(for='comment') Izohni o`zgartirish
+      input#comment.form-control(type='text', name="comment" value=musics.comment)
+    button.btn.btn-success(type='submit') O`zgartirish
+  include footer

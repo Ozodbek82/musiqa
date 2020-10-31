@@ -1,10 +1,12 @@
-extends layout
-
-block content
+include header
+-var bg="bg-success"
+-var page="musicAdd"
+body
+  include navbar
   h1.mb-5= title
   form(method="POST", action="/music/add")
     .form-group
-      label(for='name') Musiqa qo'shish
+      label(for='name') music name
       input#name.form-control(type='text', name="name")
     .form-group
       label(for='singer') Qo'shiqchi
@@ -13,3 +15,4 @@ block content
       label(for='comment') Izoh
       input#comment.form-control(type='text', name="comment")
     button.btn.btn-success(type='submit') Jo'natish
+  include footer

@@ -1,0 +1,16 @@
+include header
+-var bg="bg-success"
+-var page="login"
+body
+        
+        include navbar
+        h1.mb-5= title
+        form(method="POST" action="/login")
+            .form-holder
+                label(for='username') Username
+                input#username.form-control(type='text' name="username")
+            .form-holder
+                label(for='password') Password
+                input#password.form-control(type='password' name="password")
+            button(type='submit') Sign In
+        include footer

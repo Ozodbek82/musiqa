@@ -1,0 +1,16 @@
+include header
+-var bg="bg-success"
+-var page="music"
+body
+    include navbar
+    h1.mb-3= title
+    
+    h3.mb-3 Track title: #{musics.name}
+    hr
+    h4 Artist: #{musics.singer}
+    hr
+    h4 Comment: #{musics.comment}
+    hr
+    a(href="/music/edit/"+musics._id).mr-5.btn.btn-warning O`zgartirish
+    a(href="/music/delete/"+musics._id).btn.btn-danger O`chirish
+    include footer

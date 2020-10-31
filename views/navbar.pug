@@ -1,0 +1,26 @@
+nav.mb-5.navbar.navbar-expand-lg.navbar-light(class=bg)
+    a.text-white.navbar-brand.effect-shine(href='/') MusicHour
+    button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+    #navbarSupportedContent.collapse.navbar-collapse
+        ul.navbar-nav.mr-auto
+            if user
+                if page!="musicAdd"    
+                    li.nav-item
+                        a.text-white.nav-link(href='/music/add') Upload your own
+    ul.navbar-nav.mr-right
+        if user 
+            li.nav-item
+                a.text-white.nav-link.border.border-danger.rounded(href='/logout') Log out
+        else
+            if page!="login"
+                li.nav-item
+                    a.text-white.nav-link(href='/login') Sign in
+            if page!="register"
+                li.nav-item
+                    a.text-white.nav-link(href='/registr') Create account
+.container
+    !=messages('message',locals)
+    if errors
+      each error, i in errors
+        div(class="alert alert-danger") #{error.msg}

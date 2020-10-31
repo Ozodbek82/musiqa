@@ -1,0 +1,52 @@
+include header
+-var bg="bg-success"
+-var page="register"
+body
+  include navbar
+  .wrapper1
+      .inner
+        .image-holder
+          img(src='../images/registration-form-4.jpg' alt='')
+        form(method="POST",action='/registr')
+          h3 Sign Up
+          .form-holder.active
+            input#name.form-control(type='text' name="name" placeholder='name')
+          .form-holder
+            input#username.form-control(type='text' name="username" placeholder='username')
+          .form-holder
+            input#email.form-control(type='text' name="email" placeholder='e-mail')
+          .form-holder
+            input#password.form-control(type='password' name="password" placeholder='Password' style='font-size: 15px;')
+          .form-holder
+            input#password2.form-control(type='password' name="password2" placeholder='Re-enter password' style='font-size: 15px;')
+          .checkbox
+            label
+              input(type='checkbox' checked='')
+              |  I agree all statement in 
+              a(href='#' style="font-size: small") Terms & Conditions
+              span.checkmark
+          .form-login
+            button(type='submit') Sign up
+            p
+              | Already Have account? 
+              a(href='/login' style="font-size: small") Login    
+
+  //- h1.mb-5= title
+  //- form(method="POST", action="/registr")
+  //-   .form-group
+  //-     label(for='name') Your name:
+  //-     input#name.form-control(type='text', name="name")
+  //-   .form-group
+  //-     label(for='username') Username
+  //-     input#username.form-control(type='text', name="username")
+  //-   .form-group
+  //-     label(for='email') Email
+  //-     input#email.form-control(type='text', name="email")
+  //-   .form-group
+  //-     label(for='password') Password
+  //-     input#password.form-control(type='password', name="password")
+  //-   .form-group
+  //-     label(for='password2') Confirm your password
+  //-     input#password2.form-control(type='password', name="password2")
+  //-   button.btn.btn-success(type='submit') CREATE ACCOUNT                
+  include footer
