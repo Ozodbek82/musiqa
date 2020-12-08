@@ -59,11 +59,12 @@ router.post("/login", function (req, res, next) {
     failureRedirect: "/login",
     failureFlash: true,
   })(req, res, next);
+  
 });
 
 router.get("/logout", function (req, res, next) {
   req.logout();
-  req.flash("success", "Tizimdan chiqdingiz");
+  // req.flash("success", "Tizimdan chiqdingiz");
   res.redirect("/login");
 });
 module.exports = router;

@@ -11,7 +11,7 @@ h2 {
   width: 60%;
   padding: 25px;
   text-align: center;
-  color: rgb(0, 255, 34);
+  color: rgb(238, 97, 97);
 }
 
 .ikki {
@@ -35,15 +35,24 @@ div.container6 {
   text-shadow: 0 0 10px black;
 }
 .card {
-  width: 200px;
+  width: 300px;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  padding: 25px;
+  /* padding: 25px; */
   margin-top: 25px;
   box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);
-  border-radius: 4px;
+  border-radius: 40px;
   text-align: center;
-  background: rgba(245, 222, 179, 0.664);
-  border: 5px solid #2980b9;
+  background:white;
+  overflow:hidden;
+  /* background: rgba(245, 222, 179, 0.664); */
+  /* border: 5px solid #2980b9; */
+}
+.card_img{
+  border-radius: 50%;
+  width: 100px;
+  height: 150px;
+  object-fit: cover;
+  text-align: center;
 }
 footer {
   margin: 0;
@@ -52,13 +61,7 @@ footer {
 
   text-align: center;
 }
-.card_img {
-  border-radius: 50%;
-  width: 300px;
-  height: 300px;
-  object-fit: cover;
-  text-align: center;
-}
+
 
 /* registr uchun */
 @font-face {
@@ -119,12 +122,27 @@ a:hover {
 :focus {
   outline: none;
 }
-
+/* .txt_color{
+  color:#b09392; */
+/* } */
 .wrapper1 {
+  
   min-height: 100vh;
   display: flex;
   align-items: center;
   background: url("../images/bg-registration-form-4.jpg") no-repeat;
+  background-size: cover;
+}
+
+.bg-1{
+  background:#ffb6b3;
+}
+.wrapper2 {
+  
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  /* background: url("../images/bg-registration-form-4.jpg") no-repeat; */
   background-size: cover;
 }
 
@@ -189,7 +207,10 @@ h4 {
   border: 2px solid transparent;
   background: #ff9a9c;
 }
-
+.orange{
+  border: 2px solid transparent;
+  background: #f8b4b5;
+}
 .form-control {
   display: block;
   width: 100%;
@@ -401,4 +422,101 @@ nav a.effect-shine:hover {
 a.nav-link:hover {
   text-decoration: none;
   color: #fe4447;
+}
+@import url('https://fonts.googleapis.com/css?family=Numans');
+.ad_bg{
+  background:#fbd2d0 
+}
+.login_tog{
+background-image: url('http://getwallpapers.com/wallpaper/full/a/5/d/544750.jpg');
+background-size: cover;
+background-repeat: no-repeat;
+height: 100%;
+font-family: 'Numans', sans-serif;
+}
+
+.container{
+height: 100%;
+align-content: center;
+}
+
+.card1{
+position: relative;
+height: 370px;
+margin-top: auto;
+margin-bottom: auto;
+width: 400px;
+background-color: rgba(0,0,0,0.5) !important;
+}
+
+.social_icon span{
+font-size: 60px;
+margin-left: 10px;
+color: #FFC312;
+}
+
+.social_icon span:hover{
+color: white;
+cursor: pointer;
+}
+
+.card-header h3{
+color: white;
+}
+.exit_b{
+position: absolute;
+right: 10px;
+top: 5px;
+}
+/* .fa-times{
+width: ;
+} */
+.social_icon{
+position: absolute;
+right: 20px;
+top: -45px;
+}
+
+.input-group-prepend span{
+width: 50px;
+background-color: #FFC312;
+color: black;
+border:0 !important;
+}
+
+input:focus{
+outline: 0 0 0 0  !important;
+box-shadow: 0 0 0 0 !important;
+
+}
+
+.remember{
+color: white;
+}
+
+.remember input
+{
+width: 20px;
+height: 20px;
+margin-left: 15px;
+margin-right: 5px;
+}
+
+.login_btn{
+color: black;
+background-color: #FFC312;
+width: 100px;
+}
+
+.login_btn:hover{
+color: black;
+background-color: white;
+}
+
+.links{
+color: white;
+}
+
+.links a{
+margin-left: 4px;
 }

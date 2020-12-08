@@ -1,16 +1,40 @@
 include header
 -var bg="bg-success"
 -var page="login"
-body
-        
-        include navbar
-        h1.mb-5= title
-        form(method="POST" action="/login")
-            .form-holder
-                label(for='username') Username
-                input#username.form-control(type='text' name="username")
-            .form-holder
-                label(for='password') Password
-                input#password.form-control(type='password' name="password")
-            button(type='submit') Sign In
-        include footer
+body.login_tog
+    .container
+        .d-flex.justify-content-center.h-100
+            .card1
+                .card-header
+                    a.btn.btn-link.exit_b(href="/")
+                        span(aria-hidden='true')
+                            i.fa.fa-times
+                    h3 Sign In
+                    .d-flex.justify-content-end.social_icon
+                        //-.glyphicon.glyphicon-remove &times;
+                        //- a.btn.btn-default(href="")
+                        //-     span
+                        //- span
+                        //-     i.fab.fa-facebook-square
+                        //- span
+                        //-     i.fab.fa-google-plus-square  
+                        //- span
+                        //-     i.fab.fa-twitter-square
+                .card-body
+                    form(method="POST" action="/login")
+                        .input-group.form-group
+                            .input-group-prepend
+                                span.input-group-text
+                                    i.fas.fa-user
+                            input#username.form-control(type='text' name="username" placeholder="username")
+                        .input-group.form-group
+                            .input-group-prepend
+                                span.input-group-text
+                                    i.fas.fa-key
+                            input#password.form-control(type='password' name="password" placeholder="password")
+                        .form-group
+                            input.btn.float-right.login_btn(type="submit" value="Login")
+                .card-footer
+                    .d-flex.justify-content-center.links 
+                        | Don`t have an account? 
+                        a(href="registr") Sign Up          

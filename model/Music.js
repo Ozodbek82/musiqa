@@ -13,6 +13,19 @@ const MusicSchema = mongoose.Schema({
     type: String,
     required: true,
   },
+  orignUser:{
+    type:mongoose.Schema.Types.ObjectId,
+    ref:"user",
+  },
+  imageName:{
+    type:String,
+    default:"defIm",
+    // required: true,
+  },
+  audioName:{
+    type:String,
+    // required: true,
+  },
 });
 
 module.exports = mongoose.model("music", MusicSchema);

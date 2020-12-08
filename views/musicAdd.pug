@@ -1,18 +1,67 @@
 include header
--var bg="bg-success"
+-var bg="bg-1"
 -var page="musicAdd"
-body
+-var loadImage
+-var output
+-var loadAudio
+-var output1
+body.ad_bg
+  script.
+    function readSingleImage(e) {const name1 = e[0].name;document.getElementById("label-image").textContent = name1;}
+    function readSingleAudio(a) {const name2 = a[0].name;document.getElementById("label-audio").textContent = name2;}
+    loadImage = function(event){ 
+      output = document.getElementById('output');
+      output.src = URL.createObjectURL(event.target.files[0])};
+    loadAudio = function(event){ 
+      output1 = document.getElementById('output1');
+      output1.src = URL.createObjectURL(event.target.files[0])};
   include navbar
-  h1.mb-5= title
-  form(method="POST", action="/music/add")
-    .form-group
-      label(for='name') music name
-      input#name.form-control(type='text', name="name")
-    .form-group
-      label(for='singer') Qo'shiqchi
-      input#singer.form-control(type='text', name="singer")
-    .form-group
-      label(for='comment') Izoh
-      input#comment.form-control(type='text', name="comment")
-    button.btn.btn-success(type='submit') Jo'natish
+  
+    
+    //- h1.mb-5= title
+    .row.mx-auto.col-md-10
+      .col-md-4.col-xs-12.ml-auto
+        img#output.img-responsive(width="250px" height="300px")
+      .col-md-8.col-xs-12.mr-auto
+        form(method="POST" action="/music/add/add" enctype='multipart/form-data')
+          .form-holder
+            label(for='name') music name
+            input#name.form-control(type='text', name="name")
+          .form-holder
+            label(for='singer') Singer
+            input#singer.form-control(type='text', name="singer")
+          .form-holder
+            label(for='comment') Comment
+            input#comment.form-control(type='text', name="comment")     
+          .form-holder
+            label#label-image(for='image1') Upload image
+            input(type='file', name="image1",onChange="readSingleImage(this.files);loadImage(event)",accept="image/*", required)
+      
+            hr
+          .form-holder      
+            label#label-audio(for='audio1') Upload audio
+            input(type='file', name="audio1",onChange="readSingleAudio(this.files);loadAudio(event)",accept="audio/*", required)
+            hr
+            audio.mb-4(controls='')#output1      
+          button.btn.bg-1(type='submit') Submit
+  
+
+
+    
+    //- form(action='/upload' method='post' enctype='multipart/form-data')
+    //-   .custom-file.mb-3
+    //-     input#file1.custom-file-input(type='file' name='file' onchange='readSingleFile(this.files)' accept="image/*")
+    //-     label#file-label.custom-file-label(for='file1') Faylni tanlang
+    //-   //- input.btn.btn-primary.btn-block(type='submit' value='Yuborish')
+    //- if(files)
+    //-   .card.mb-3
+    //-     .card-header
+    //-       .card-title #{file.filename}
+    //-     .card-body
+    //-       if(file.isImage)
+    //-         img.img-responsive(src=`image/#{file.filename}` width="250")
+    //-       else
+    //-         p #{file.filename} 
+    
+    
   include footer

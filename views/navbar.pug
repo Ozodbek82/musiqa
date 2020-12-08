@@ -7,7 +7,7 @@ nav.mb-5.navbar.navbar-expand-lg.navbar-light(class=bg)
             if user
                 if page!="musicAdd"    
                     li.nav-item
-                        a.text-white.nav-link(href='/music/add') Upload your own
+                        a.text-white.nav-link(href='/music/add/add') Upload your own
     ul.navbar-nav.mr-right
         if user 
             li.nav-item
@@ -22,5 +22,5 @@ nav.mb-5.navbar.navbar-expand-lg.navbar-light(class=bg)
 .container
     !=messages('message',locals)
     if errors
-      each error, i in errors
-        div(class="alert alert-danger") #{error.msg}
+        each error, i in errors
+            div(class="alert alert-danger") #{error.msg}

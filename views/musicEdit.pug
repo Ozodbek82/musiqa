@@ -1,18 +1,44 @@
 include header
--var bg="bg-success"
+-var bg="bg-1"
+
 -var page="musicEdit"
-body
+body.ad_bg
+  script.
+    function readSingleImage(e) {const name1 = e[0].name;document.getElementById("label-image").textContent = name1;}
+    function readSingleAudio(a) {const name2 = a[0].name;document.getElementById("label-audio").textContent = name2;}
+    loadImage = function(event){ 
+      output = document.getElementById('output');
+      output.src = URL.createObjectURL(event.target.files[0])};
+    loadAudio = function(event){ 
+      output1 = document.getElementById('output1');
+      output1.src = URL.createObjectURL(event.target.files[0])};
   include navbar
-  h1.mb-5= title
-  form(method="POST", action="/music/edit/"+musics._id)
-    .form-group
-      label(for='name') Musiqa nomini o`zgartirish
-      input#name.form-control(type='text', name="name",value=musics.name)
-    .form-group
-      label(for='singer') Qo'shiqchini o`zgartirish
-      input#singer.form-control(type='text', name="singer" value=musics.singer)
-    .form-group
-      label(for='comment') Izohni o`zgartirish
-      input#comment.form-control(type='text', name="comment" value=musics.comment)
-    button.btn.btn-success(type='submit') O`zgartirish
+  //- h1.mb-5= title
+  .row.mx-auto
+  
+    .col-md-4.col-xs-12.ml-auto
+      img#output.img-responsive(width="250px" height="300px" src='')
+    .col-md-5.col-xs-12.mr-auto
+      form(method="POST", action="/music/edit/"+music1._id enctype='multipart/form-data')
+        .form-holder
+          label(for='name') rename the music
+          input#name.form-control(type='text', name="name",value=music1.name)
+        .form-holder
+          label(for='singer') Rename the artist
+          input#singer.form-control(type='text', name="singer" value=music1.singer)
+        .form-holder
+          label(for='comment') change the comment
+          input#comment.form-control(type='text', name="comment" value=music1.comment)
+        .form-holder
+          label#label-image(for='image1') Upload image     
+          input(type='file', name="image1",onChange="readSingleImage(this.files);loadImage(event)",accept="image/*", required)
+        //- .form-control
+        hr
+        .form-holder      
+          label#label-audio(for='audio1') Upload audio    
+          input(type='file', name="audio1",onChange="readSingleAudio(this.files);loadAudio(event)",accept="audio/*", required)
+        hr
+        audio(controls='' src='')#output1
+        hr
+        button.btn.bg-1(type='submit') Change
   include footer

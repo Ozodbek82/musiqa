@@ -2,17 +2,23 @@
 -var page="dashboard"
 include header
 body.bir
+  script.
+    function pauseOthers(ele) {$("audio").not(ele).each(function (index, audio){audio.pause();});}
   .container5
     include navbar
     h2.mx-auto Connect on MusicHour
     h3.mx-auto(style="") Discover, stream, and share a constantly expanding mix of music from emerging and major artists around the world. Have fun and enjoy the use of our website.
     .container6
-      button.btn.btn-warning.ikki Sign up for free
+      a.btn.btn-warning.ikki(href="registr") Sign up for free
   br
   br
 
   ul.app
       each music, i in musics
         li.card
-          a(href="music/" + music._id)=music.name
+          a(href="music/" + music._id)
+            img.img-responsive(width="350px" height="400px" src='../uploads/'+music.imageName onclick=("music/"+ music._id))           
+          p #{music.singer}
+          a(href="music/" + music._id)=music.name                 
+          audio(controls='' onplay="pauseOthers(this);" src='../uploads/'+music.audioName)
   include footer

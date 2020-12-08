@@ -1,0 +1,51 @@
+// console.log(req.params.id);
+  
+  // glob("./public/uploads/**/*.{mp3,jpeg,jpg,png}",  function (er, files) {
+  //   if(er) console.log(er)
+
+  //   else{ 
+  //     Music.aggregate([{$project:{imageName:1,audioName:1}}],(err,data)=>{
+  //       if(err) console.log(err);
+  //       else{
+  //         const data1=[];
+  //         for (var key in data)
+  //           data1.push(data[key])
+  //         console.log(data1)
+  //         // let array_list=[];
+  //         // let delete_list=[];
+  //         // for(i=0;i<files.length;i++)
+  //         //   array_list.push(files[i].slice(17));
+          
+  //         // for(i=0;i<array_list.length;i++)
+  //         //   console.log(music.find(array_list[i]));
+  //           // console.log(music.find(array_list[i]));
+  //           // {
+              
+  //           // }
+  //           // if(!(musics.find({audioName:{$all:array_list[i]}}))){
+
+  //           // }
+  //         // console.log(array_list);
+  //         // console.log(musics)
+  //       }
+  //     }
+        
+  //     ); 
+  //   }   
+  // })
+  
+  // console.log(arr_f);
+  //./public/uploads/
+  // const {orignUser}= require("../middleware/eA");
+
+/* GET users listing. */
+// router.get("/:id",eA, function (req, res, next) {
+//   Music.findById(req.params.id, (err, musics) => {
+//     console.log(musics);
+//     res.render("music", {
+//       title: "Musiqa sahifasi",
+//       musics,
+//     });
+//   });
+// });
+/* GET users listing. */

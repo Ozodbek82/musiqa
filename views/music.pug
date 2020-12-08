@@ -1,16 +1,24 @@
 include header
--var bg="bg-success"
+-var bg="bg-1"
 -var page="music"
-body
+body.ad_bg
     include navbar
-    h1.mb-3= title
-    
-    h3.mb-3 Track title: #{musics.name}
-    hr
-    h4 Artist: #{musics.singer}
-    hr
-    h4 Comment: #{musics.comment}
-    hr
-    a(href="/music/edit/"+musics._id).mr-5.btn.btn-warning O`zgartirish
-    a(href="/music/delete/"+musics._id).btn.btn-danger O`chirish
+        //- h1.mb-3= title
+    .wrapper2
+        .row.mx-auto.col-md-10
+            .col-md-4.col-xs-12.ml-auto   
+                img.img-responsive(width="350px" height="500px" src='../uploads/'+music.imageName)
+            .col-md-8.col-xs-12.mr-auto 
+                
+                h3.mb-1.mt-2 Track title: #{music.name}
+                h3.mb-1 Artist: #{music.singer}
+                h3.mb-2.font-italic Comment: #{music.comment}
+                hr
+                audio(controls='' src='../uploads/'+music.audioName)
+                hr
+                h6.mb-4.text-danger Upload by: #{admin}
+                if music.orignUser==user.id
+                    a(href="/music/edit/"+music._id).btn.mr-5.bg-1 Change
+                    a(href="/music/delete/"+music._id).btn.btn-danger Delete
+                
     include footer
